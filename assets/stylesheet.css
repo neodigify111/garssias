@@ -154,7 +154,10 @@
 .font-pn {
     font-family: 'Proxima Nova'; }
 
-
+/*Presets*/
+*{
+    transition: color 0.3s ease;
+}
 /* animation */
 
 .grass-clean-animation {
