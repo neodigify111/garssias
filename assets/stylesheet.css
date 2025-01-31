@@ -268,7 +268,7 @@ content: "";
 position: absolute;
 height: 100%;
 width: 0;
-background-color: #044F27;
+background-color: #ED2024;
 border-radius:calc(infinity * 1px);
 transition:width 0.3s ease-in-out;
 left: 0;
