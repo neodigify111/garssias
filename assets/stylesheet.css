@@ -405,13 +405,16 @@ z-index: -1;
 
 
 
-.active.grass-rotate-anm-1 > div:nth-child(1) { animation: move1 1s alternate; animation-fill-mode: forwards;  animation-iteration-count: 2; }
+/* .active.grass-rotate-anm-1 > div:nth-child(1) { animation: move1 1s alternate; animation-fill-mode: forwards;  animation-iteration-count: 2; }
 .active.grass-rotate-anm-1 > div:nth-child(2) { animation: move2 1s alternate; animation-fill-mode: forwards;  animation-iteration-count: 2; }
 .active.grass-rotate-anm-1 > div:nth-child(3) { animation: move1 1s alternate; animation-fill-mode: forwards;  animation-iteration-count: 2; }
-.active.grass-rotate-anm-1 > div:nth-child(4) { animation: move2 1s alternate; animation-fill-mode: forwards;  animation-iteration-count: 2; }
+.active.grass-rotate-anm-1 > div:nth-child(4) { animation: move2 1s alternate; animation-fill-mode: forwards;  animation-iteration-count: 2; } */
 
-/* .grass-rotate-anm:hover > div {
-    animation-play-state: paused;  } */
+.active.grass-rotate-anm-1 > div {
+    animation-name: animation-buzz-out;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1; }
 
 @keyframes move1 {
     from { transform: rotate(-3deg); }
@@ -438,13 +441,53 @@ z-index: -1;
 
 
 
-.active.grass-rotate-anm-2 > div:nth-child(1) { animation: move1_ 1s alternate; animation-fill-mode: forwards; animation-iteration-count: 2; }
+/* .active.grass-rotate-anm-2 > div:nth-child(1) { animation: move1_ 1s alternate; animation-fill-mode: forwards; animation-iteration-count: 2; }
 .active.grass-rotate-anm-2 > div:nth-child(2) { animation: move2_ 1s alternate; animation-fill-mode: forwards; animation-iteration-count: 2; }
 .active.grass-rotate-anm-2 > div:nth-child(3) { animation: move1_ 1s alternate; animation-fill-mode: forwards; animation-iteration-count: 2; }
-.active.grass-rotate-anm-2 > div:nth-child(4) { animation: move2_ 1s alternate; animation-fill-mode: forwards; animation-iteration-count: 2; }
+.active.grass-rotate-anm-2 > div:nth-child(4) { animation: move2_ 1s alternate; animation-fill-mode: forwards; animation-iteration-count: 2; } */
 
 .active.grass-rotate-anm-2 > div {
-    animation-timing-function: linear;}
+    animation-name: animation-buzz-out;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1; }
+
+    @keyframes animation-buzz-out{
+
+        10% {
+            transform: translateX(3px) rotate(2deg);
+        }
+        20% {
+            transform: translateX(-3px) rotate(-2deg);
+        }
+        30% {
+            transform: translateX(3px) rotate(2deg);
+        }
+        40% {
+            transform: translateX(-3px) rotate(-2deg);
+        }
+        50% {
+            transform: translateX(2px) rotate(1deg);
+        }
+        60% {
+            transform: translateX(-2px) rotate(-1deg);
+        }
+        70% {
+            transform: translateX(2px) rotate(1deg);
+        }
+        80% {
+            transform: translateX(-2px) rotate(-1deg);
+        }
+        90% {
+            transform: translateX(1px) rotate(0);
+        }
+        
+        100% {
+            transform: translateX(-1px) rotate(0);
+        }
+        
+        }
+
 
 /* .grass-rotate-anm-2:hover > div {
     animation-play-state: paused;  } */
