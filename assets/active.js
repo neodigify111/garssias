@@ -75,7 +75,6 @@ $(document).ready( function(){
   });
 
 
-
   // var product
   $('.grass-var-prod').on('click', function(){
     var ID = $(this).data('id');
@@ -84,6 +83,46 @@ $(document).ready( function(){
     $(this).parents('.grass-var-prod-main').find('.grass-var-prod-wrap').addClass('hidden');
     $(this).parents('.grass-var-prod-main').find('.grass-' + ID ).removeClass('hidden');
   });
+
+  // animation
+
+  function checkVisibility() {
+    var $element = $('.grass-rotate-anm-1');
+    var elementTop = $element.offset().top;
+    var elementBottom = elementTop + $element.outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+            if (elementBottom > viewportTop && elementTop < viewportBottom) {
+              if ( ! $element.hasClass('active') ) {
+                $element.addClass('active');
+              }
+            } else {
+                $element.removeClass('active');
+            }
+  }
+  function checkVisibility2() {
+    var $element = $('.grass-rotate-anm-2');
+    var elementTop = $element.offset().top;
+    var elementBottom = elementTop + $element.outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+            if (elementBottom > viewportTop && elementTop < viewportBottom) {
+              if ( ! $element.hasClass('active') ) {
+                $element.addClass('active');
+              }
+            } else {
+                $element.removeClass('active');
+            }
+  }
+
+  $(window).on('scroll resize', checkVisibility );
+  $(window).on('scroll resize', checkVisibility2 );
+
+  checkVisibility();
+  checkVisibility2();
+
 
 });
 
