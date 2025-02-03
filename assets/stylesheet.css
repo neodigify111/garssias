@@ -290,21 +290,20 @@ background-color: #044F27 !important;
 .btn-hv-bg::before{
 content: "";
 position: absolute;
-height: 100%;
-width: 0;
+height: 0%;
+width: 100%;
 background-color: #ED2024;
 border-radius:calc(infinity * 1px);
-transition:width 0.3s ease-in-out;
+transition:height 0.3s ease-in-out;
 left: 0;
-top: 0;
+bottom: 0;
 z-index: -1;
 }
 
 .btn-hv-bg:hover::before{
-    width: 100%;
+    height: 100%;
 
 }
-<<<<<<< HEAD
 
 @media (max-width: 767px) {
     .grass-need-help br {
@@ -363,5 +362,34 @@ z-index: -1;
 
 .sdui-sticky-content.is-active {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05); }
-=======
->>>>>>> 0bd71680dece5dc0eafecaf5cefca0f87587621b
+
+
+..btn-hv-b {
+    position: relative; /* Ensures children can be positioned absolutely */
+    display: inline-block;
+    overflow: hidden;
+}
+
+.btn-text {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    position: relative; /* Needed for the pseudo-element to position correctly */
+}
+
+.btn-text::after {
+    content: attr(data-attribute);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -300%; /* Start outside the button */
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.btn-hv-bg:hover .btn-text {
+    transform: translateY(-300%);
+}
+
+.btn-hv-bg:hover .btn-text::after {
+    transform: translateY(0%);
+}
