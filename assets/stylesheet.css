@@ -304,6 +304,7 @@ z-index: -1;
     width: 100%;
 
 }
+<<<<<<< HEAD
 
 @media (max-width: 767px) {
     .grass-need-help br {
@@ -362,3 +363,5 @@ z-index: -1;
 
 .sdui-sticky-content.is-active {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05); }
+=======
+>>>>>>> 0bd71680dece5dc0eafecaf5cefca0f87587621b
