@@ -4,7 +4,7 @@ const swiper = new Swiper('.grass-top-text-play', {
     loop: true,
     centeredSlides: true,
     slidesPerView: 'auto',
-    spaceBetween: 30,
+    spaceBetween: 0,
     speed: 6000,
     autoplay: {
       delay: 0,
