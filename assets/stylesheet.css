@@ -394,19 +394,24 @@ z-index: -1;
 
 /* rotate */
 
-.grass-rotate-anm > div {
+/* .grass-rotate-anm > div {
     animation-timing-function: linear;
     animation-iteration-count: infinite; }
-
 
 .grass-rotate-anm > div:nth-child(1) { animation: move1 1s infinite alternate; animation-delay: 0s; }
 .grass-rotate-anm > div:nth-child(2) { animation: move2 1s infinite alternate; animation-delay: 0s; }
 .grass-rotate-anm > div:nth-child(3) { animation: move3 1s infinite alternate; animation-delay: 0s; }
-.grass-rotate-anm > div:nth-child(4) { animation: move4 1s infinite alternate; animation-delay: 0s; }
+.grass-rotate-anm > div:nth-child(4) { animation: move4 1s infinite alternate; animation-delay: 0s; } */
 
 
-.grass-rotate-anm:hover > div {
-    animation-play-state: paused;  }
+
+.active.grass-rotate-anm-1 > div:nth-child(1) { animation: move1 1s alternate; animation-fill-mode: forwards;  animation-iteration-count: 2; }
+.active.grass-rotate-anm-1 > div:nth-child(2) { animation: move2 1s alternate; animation-fill-mode: forwards;  animation-iteration-count: 2; }
+.active.grass-rotate-anm-1 > div:nth-child(3) { animation: move1 1s alternate; animation-fill-mode: forwards;  animation-iteration-count: 2; }
+.active.grass-rotate-anm-1 > div:nth-child(4) { animation: move2 1s alternate; animation-fill-mode: forwards;  animation-iteration-count: 2; }
+
+/* .grass-rotate-anm:hover > div {
+    animation-play-state: paused;  } */
 
 @keyframes move1 {
     from { transform: rotate(-3deg); }
@@ -418,30 +423,31 @@ z-index: -1;
     to { transform: rotate(-3deg); }
 }
 
-@keyframes move3 {
-    from { transform: rotate(-3deg); }
-    to { transform: rotate(3deg); }
-}
-
-@keyframes move4 {
-    from { transform: rotate(3deg); }
-    to { transform: rotate(-3deg); }
-}
 
 
-.grass-rotate-anm-2 > div {
+/* .grass-rotate-anm-2 > div {
     animation-timing-function: linear;
-    animation-iteration-count: infinite; }
+    animation-iteration-count: infinite; } */
 
 
-.grass-rotate-anm-2 > div:nth-child(1) { animation: move1_ 1s infinite alternate; animation-delay: 0s; }
+/* .grass-rotate-anm-2 > div:nth-child(1) { animation: move1_ 1s infinite alternate; animation-delay: 0s; }
 .grass-rotate-anm-2 > div:nth-child(2) { animation: move2_ 1s infinite alternate; animation-delay: 0s; }
 .grass-rotate-anm-2 > div:nth-child(3) { animation: move1_ 1s infinite alternate; animation-delay: 0s; }
-.grass-rotate-anm-2 > div:nth-child(4) { animation: move2_ 1s infinite alternate; animation-delay: 0s; }
+.grass-rotate-anm-2 > div:nth-child(4) { animation: move2_ 1s infinite alternate; animation-delay: 0s; } */
 
 
-.grass-rotate-anm-2:hover > div {
-    animation-play-state: paused;  }
+
+
+.active.grass-rotate-anm-2 > div:nth-child(1) { animation: move1_ 1s alternate; animation-fill-mode: forwards; animation-iteration-count: 2; }
+.active.grass-rotate-anm-2 > div:nth-child(2) { animation: move2_ 1s alternate; animation-fill-mode: forwards; animation-iteration-count: 2; }
+.active.grass-rotate-anm-2 > div:nth-child(3) { animation: move1_ 1s alternate; animation-fill-mode: forwards; animation-iteration-count: 2; }
+.active.grass-rotate-anm-2 > div:nth-child(4) { animation: move2_ 1s alternate; animation-fill-mode: forwards; animation-iteration-count: 2; }
+
+.active.grass-rotate-anm-2 > div {
+    animation-timing-function: linear;}
+
+/* .grass-rotate-anm-2:hover > div {
+    animation-play-state: paused;  } */
 
 @keyframes move1_ {
     from { transform: rotate(-1deg); }
