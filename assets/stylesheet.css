@@ -220,39 +220,47 @@ body {
     to { right:-20px;}
   }
 
-
 .grass-mail-chimp::before {
     z-index: -1;
     position: absolute;
     content: '';
     background-image: url('pattern-bg.png');
-    top: -30%;
-    height: 150%;
-    width: calc(100% + 160px );
-    left: -80px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;   }
-
+    top: 0%;
+    height: 120%;
+    width: calc(100% + 1400px );
+    left: -700px;
+    background-repeat: repeat-x;
+    background-size: 1400px;
+    background-position: top center;   }
 
 .grass-customer-bg::before {
     z-index: -1;
     position: absolute;
     content: '';
     background-image: url('pattern-bg-2.png');
-    top: -30%;
-    height: 150%;
-    width: calc(100% + 160px );
-    left: -80px;
-    background-repeat: no-repeat;
-    background-size: contain;
+    top: -5%;
+    height: 130%;
+
+    /* width: calc(100% + 160px );
+    left: -80px; */
+    width: calc(100% + 1200px );
+    left: -600px;
+
+    background-repeat: repeat-x;
+    background-size: 1900px;
     background-position: center;   }
 
 .grass-garden {
-    background-size: 1400px;
-    background-position: top -50px center;
+    background-size: 1920px;
+    background-position: top -150px center;
     background-repeat: repeat-x;
     background-image: url('grass-field-bg.jpg'); }
+
+@media (max-width: 1366px) {
+    .grass-garden {
+        background-size: 1420px;
+        background-position: top -50px center; }
+}
 
 @media (max-width: 767px) {
 
@@ -310,6 +318,27 @@ z-index: -1;
         display: none; }
 }
 
+.grass-need-help a {
+    position: relative; }
+
+
+.grass-need-help a::before {
+    transition: 0.3s ease;
+    transform: scale(0);
+    position: absolute;
+    border-radius: 100%;
+    left: -50%;
+    top: -30%;
+    width: 200%;
+    height: 200%;
+    z-index: 1;
+    content: '';
+    background-color: rgba(255, 255, 255, 0.3); }
+.grass-need-help a:hover::before {
+    transition: 0.3s ease;
+    transform: scale(1);
+}
+
 .gr-transtion ,
 .grass-hover-animation {
     transition: 0.3s ease; }
@@ -328,7 +357,6 @@ z-index: -1;
 
 .animated .grass-mobile-trans  {
     animation: fadeoutRight 0.5s; } 
-
 
 
     @-webkit-keyframes fadeIn {
@@ -364,7 +392,7 @@ z-index: -1;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05); }
 
 
-..btn-hv-b {
+.btn-hv-bg {
     position: relative; /* Ensures children can be positioned absolutely */
     display: inline-block;
     overflow: hidden;
