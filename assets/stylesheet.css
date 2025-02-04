@@ -451,3 +451,186 @@ z-index: -1;
 .grass-product-toggle-button{
     cursor: pointer;
 }
+
+
+/* Card buzz effect */
+
+.grass-rotate-anm .active:nth-child(odd) {
+    animation-name: animation-buzz-out-odd;
+    animation-delay: 0.5s;
+    animation-duration: .75s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    transform: translateX(0px) rotate(-5deg);
+
+}
+.grass-rotate-anm .active:nth-child(even) {
+    animation-name: animation-buzz-out-odd;
+    animation-delay: 0.5s;
+    animation-duration: .75s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    transform: translateX(0px) rotate(5deg);
+}
+
+
+@keyframes animation-buzz-out-odd{
+    10% {
+        transform: translateX(3px) rotate(2deg);
+    }
+    20% {
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    30% {
+        transform: translateX(3px) rotate(2deg);
+    }
+    40% {
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    50% {
+        transform: translateX(2px) rotate(3deg);
+    }
+    60% {
+        transform: translateX(-2px) rotate(-3deg);
+    }
+    70% {
+        transform: translateX(2px) rotate(4deg);
+    }
+    80% {
+        transform: translateX(-2px) rotate(-4deg);
+    }
+    90% {
+        transform: translateX(0px) rotate(5deg);
+    }
+    
+    100% {
+        transform: translateX(0px) rotate(-5deg);
+    }
+    
+    }
+
+    @keyframes animation-buzz-out-even{
+        10% {
+            transform: translateX(3px) rotate(-2deg);
+        }
+        20% {
+            transform: translateX(-3px) rotate(2deg);
+        }
+        30% {
+            transform: translateX(3px) rotate(-2deg);
+        }
+        40% {
+            transform: translateX(-3px) rotate(2deg);
+        }
+        50% {
+            transform: translateX(2px) rotate(-3deg);
+        }
+        60% {
+            transform: translateX(-2px) rotate(3deg);
+        }
+        70% {
+            transform: translateX(2px) rotate(-4deg);
+        }
+        80% {
+            transform: translateX(-2px) rotate(4deg);
+        }
+        90% {
+            transform: translateX(0px) rotate(-5deg);
+        }
+        
+        100% {
+            transform: translateX(0px) rotate(5deg);
+        }
+        
+        }
+
+
+
+        .grass-rotate-anm-2 .active:nth-child(odd) {
+            animation-name: animation-buzz-out-odd;
+            animation-delay: 0.5s;
+            animation-duration: .75s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+            transform: translateX(0px) rotate(-1deg);
+        
+        }
+        .grass-rotate-anm-2 .active:nth-child(even) {
+            animation-name: animation-buzz-out-odd;
+            animation-delay: 0.5s;
+            animation-duration: .75s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+            transform: translateX(0px) rotate(1deg);
+        }
+        
+        
+        @keyframes animation-buzz-out-odd{
+            10% {
+                transform: translateX(3px) rotate(2deg);
+            }
+            20% {
+                transform: translateX(-3px) rotate(-2deg);
+            }
+            30% {
+                transform: translateX(3px) rotate(2deg);
+            }
+            40% {
+                transform: translateX(-3px) rotate(-2deg);
+            }
+            50% {
+                transform: translateX(2px) rotate(3deg);
+            }
+            60% {
+                transform: translateX(-2px) rotate(-3deg);
+            }
+            70% {
+                transform: translateX(2px) rotate(4deg);
+            }
+            80% {
+                transform: translateX(-2px) rotate(-4deg);
+            }
+            90% {
+                transform: translateX(0px) rotate(5deg);
+            }
+            
+            100% {
+                transform: translateX(0px) rotate(-5deg);
+            }
+            
+            }
+        
+            @keyframes animation-buzz-out-even{
+                10% {
+                    transform: translateX(3px) rotate(-2deg);
+                }
+                20% {
+                    transform: translateX(-3px) rotate(2deg);
+                }
+                30% {
+                    transform: translateX(3px) rotate(-2deg);
+                }
+                40% {
+                    transform: translateX(-3px) rotate(2deg);
+                }
+                50% {
+                    transform: translateX(2px) rotate(-3deg);
+                }
+                60% {
+                    transform: translateX(-2px) rotate(3deg);
+                }
+                70% {
+                    transform: translateX(2px) rotate(-4deg);
+                }
+                80% {
+                    transform: translateX(-2px) rotate(4deg);
+                }
+                90% {
+                    transform: translateX(0px) rotate(-5deg);
+                }
+                
+                100% {
+                    transform: translateX(0px) rotate(5deg);
+                }
+                
+                }

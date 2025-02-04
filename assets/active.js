@@ -98,10 +98,10 @@ $(function () {
     $(this).parents('.grass-var-prod-main').find('.grass-' + ID ).removeClass('hidden');
   });
 
-  // animation
+  //rotate animation
 
   function checkVisibility() {
-    var $element = $('.grass-rotate-anm-1');
+    var $element = $('.grass-rotate-anm div');
     var elementTop = $element.offset().top;
     var elementBottom = elementTop + $element.outerHeight();
     var viewportTop = $(window).scrollTop();
@@ -116,7 +116,7 @@ $(function () {
             }
   }
   function checkVisibility2() {
-    var $element = $('.grass-rotate-anm-2');
+    var $element = $('.grass-rotate-anm-2 div');
     var elementTop = $element.offset().top;
     var elementBottom = elementTop + $element.outerHeight();
     var viewportTop = $(window).scrollTop();
@@ -139,5 +139,104 @@ $(function () {
 
 
 });
+
+//Hero BG image Slicing anim
+
+
+const elementsToAnimate = $(".split-img");
+
+// Intersection Observer to trigger the animation when the image is in view
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            const $imgElement = $(entry.target);
+            if (entry.isIntersecting && !$imgElement.hasClass("animated")) {
+                $imgElement.addClass("animated");
+                runSplitAnimation($imgElement);
+            }
+        });
+    },
+    { threshold: 0.5 } // Trigger when 50% visible
+);
+
+// Attach observer
+elementsToAnimate.each(function () {
+    observer.observe(this);
+});
+
+// Function to slice and animate the image using clip-path
+function runSplitAnimation($imgElement) {
+    const imgUrl = $imgElement.attr("src");
+    const containerWidth = $imgElement.width();
+    const containerHeight = $imgElement.height();
+    const squareSize = 180; // Define square size
+
+    // Create container for slices
+    const $sliceContainer = $("<div>", {
+        class: "slice-container",
+        css: {
+            width: containerWidth,
+            height: containerHeight,
+            position: "absolute",
+            top: 0,
+            left: 0,
+            overflow: "hidden",
+        },
+    });
+
+    // Hide the original image and insert container
+    $imgElement.hide().before($sliceContainer);
+
+    const cols = Math.ceil(containerWidth / squareSize);
+    const rows = Math.ceil(containerHeight / squareSize);
+
+    // Generate slices using clip-path
+    let slices = [];
+    for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+            const x1 = (col * 100) / cols;
+            const x2 = ((col + 1) * 100) / cols;
+            const y1 = (row * 100) / rows;
+            const y2 = ((row + 1) * 100) / rows;
+
+            const $slice = $("<div>", {
+                class: "slice",
+                css: {
+                    position: "absolute",
+                    width: `${containerWidth}px`,
+                    height: `${containerHeight}px`,
+                    backgroundImage: `url('${imgUrl}')`,
+                    backgroundSize: `cover`,
+                    backgroundPosition: `center`,
+                    backgroundRepeat: "no-repeat",
+                    clipPath: `polygon(${x1}% ${y1}%, ${x2}% ${y1}%, ${x2}% ${y2}%, ${x1}% ${y2}%)`,
+                    opacity: 0,
+                    transition: "opacity 0.3s ease-in-out",
+                },
+            });
+
+            $sliceContainer.append($slice);
+            slices.push($slice);
+        }
+    }
+
+    // Randomize slices
+    slices.sort(() => Math.random() - 0.5);
+
+    // Animate slices with staggered fade-in effect
+    setTimeout(() => {
+        slices.forEach(($slice, index) => {
+            setTimeout(() => {
+                $slice.css("opacity", 1);
+            }, index * 50);
+        });
+    }, 100);
+
+    // Reveal original image after animation completes
+    setTimeout(() => {
+        $imgElement.show().css("opacity", 1);
+        $sliceContainer.remove(); // Remove slices after effect
+    }, slices.length * 50 + 800);
+}
 
 })(jQuery);
