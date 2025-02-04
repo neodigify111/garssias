@@ -571,6 +571,7 @@ z-index: -1;
         }
         .grass-rotate-anm-2 .active:hover, .grass-rotate-anm .active:hover{
             transform: translateX(0px) rotate(0deg);
+            cursor: default;
         }
         
         @keyframes animation-buzz-out-odd{
