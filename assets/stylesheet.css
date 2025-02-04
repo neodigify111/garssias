@@ -158,7 +158,7 @@ body {
 
 /*Presets*/
 *{
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 /* animation */
 
@@ -302,7 +302,7 @@ height: 0%;
 width: 100%;
 background-color: #ED2024;
 border-radius:calc(infinity * 1px);
-transition:height 0.3s ease-in-out;
+transition:height 0.2s ease-in-out;
 left: 0;
 bottom: 0;
 z-index: -1;
@@ -323,7 +323,7 @@ z-index: -1;
 
 
 .grass-need-help a::before {
-    transition: 0.3s ease;
+    transition: 0.2s ease;
     transform: scale(0);
     position: absolute;
     border-radius: 100%;
@@ -335,13 +335,13 @@ z-index: -1;
     content: '';
     background-color: rgba(255, 255, 255, 0.3); }
 .grass-need-help a:hover::before {
-    transition: 0.3s ease;
+    transition: 0.2s ease;
     transform: scale(1);
 }
 
 .gr-transtion ,
 .grass-hover-animation {
-    transition: 0.3s ease; }
+    transition: 0.2s ease; }
 
 
 .animated .grass-trans-opa {
@@ -353,7 +353,7 @@ z-index: -1;
 
 .grass-mobile-trans  {
     animation: fadeinRight 0.5s;
-    transition: 0.3s ease; } 
+    transition: 0.2s ease; } 
 
 .animated .grass-mobile-trans  {
     animation: fadeoutRight 0.5s; } 
@@ -400,7 +400,7 @@ z-index: -1;
 
 .btn-text {
     display: inline-block;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     position: relative; /* Needed for the pseudo-element to position correctly */
 }
 
@@ -410,7 +410,7 @@ z-index: -1;
     left: 0;
     width: 100%;
     bottom: -300%; /* Start outside the button */
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     text-align: center;
 }
 
@@ -437,4 +437,17 @@ z-index: -1;
     max-height: 500px; /* Adjust based on content size */
     opacity: 1;
     transform: scaleY(1);
+}
+
+.grass-product-toggle-button svg{
+    transition: transform 0.2s ease-in-out;
+    transform: rotate(0deg);
+}
+.ico-rot-180 svg {
+
+    transform: rotate(-180deg);
+}
+
+.grass-product-toggle-button{
+    cursor: pointer;
 }
