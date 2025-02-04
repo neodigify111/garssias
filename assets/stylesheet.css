@@ -308,6 +308,9 @@ bottom: 0;
 z-index: -1;
 }
 
+.subscribe-btn.btn-hv-bg::before{
+border-radius: 0; }
+
 .btn-hv-bg:hover::before{
     height: 100%;
 
