@@ -14,26 +14,38 @@ const swiper = new Swiper('.grass-top-text-play', {
 
   });
 
-$(document).ready( function(){
+$( function(){
 
-    // button toggle
-    $('.grass-product-toggle-button').on('click', function(){
-        $(this).siblings('.grass-product-toggle-info').removeClass('hidden');
-    });
+  $('.grass-product-toggle-button').on('click', function (e) {
+    e.stopPropagation(); // Prevents event bubbling
+
+    let $info = $(this).siblings('.grass-product-toggle-info');
+
+    // Close all other dropdowns before toggling the clicked one
+    $('.grass-product-toggle-info').not($info).removeClass('toggle');
+
+    // Toggle the clicked dropdown
+    $info.toggleClass('toggle');
+});
+
+// Click outside to close all dropdowns
+$(document).on('click', function () {
+    $('.grass-product-toggle-info').removeClass('toggle');
+});
 
     $('.grass-product-toggle-info button').on('click', function(){
         $(this).parents('.grass-product-toggle-info').siblings('.grass-product-toggle-button').find('span').text( $(this).text() );
-        $(this).parents('.grass-product-toggle-info').addClass('hidden');
+        $(this).parents('.grass-product-toggle-info').addClass('toggle');
     });
 
-    $(document).mouseup(function(e) {
-        var container = $(".grass-product-toggle-info");
-        // if the target of the click isn't the container nor a descendant of the container
-        if (!container.is(e.target) && container.has(e.target).length === 0) 
-        {
-            $('.grass-product-toggle-info').addClass('hidden');
-        }
-    });
+    // $(document).mouseup(function(e) {
+    //     var container = $(".grass-product-toggle-info");
+    //     // if the target of the click isn't the container nor a descendant of the container
+    //     if (!container.is(e.target) && container.has(e.target).length === 0) 
+    //     {
+    //         $('.grass-product-toggle-info').addClass('toggle');
+    //     }
+    // });
 
     // counter
   $('#waypoint').waypoint(function() {

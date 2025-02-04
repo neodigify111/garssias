@@ -421,3 +421,20 @@ z-index: -1;
 .btn-hv-bg:hover .btn-text::after {
     transform: translateY(0%);
 }
+
+
+/* toggle css */
+.grass-product-toggle-info {
+    max-height: 0;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: max-height 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    overflow: hidden;
+}
+
+.grass-product-toggle-info.toggle {
+    max-height: 500px; /* Adjust based on content size */
+    opacity: 1;
+    transform: scaleY(1);
+}
