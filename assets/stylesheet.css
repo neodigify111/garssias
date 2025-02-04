@@ -555,6 +555,8 @@ z-index: -1;
             transform: translateX(0px) rotate(-1deg);
         
         }
+
+
         .grass-rotate-anm-2 .active:nth-child(even) {
             animation-name: animation-buzz-out-odd;
             animation-delay: 0.5s;
@@ -563,7 +565,13 @@ z-index: -1;
             animation-iteration-count: 1;
             transform: translateX(0px) rotate(1deg);
         }
-        
+
+        .grass-rotate-anm-2 > div{
+            transition: transform 0.2s ease;
+        }
+        .grass-rotate-anm-2 .active:hover, .grass-rotate-anm .active:hover{
+            transform: translateX(0px) rotate(0deg);
+        }
         
         @keyframes animation-buzz-out-odd{
             10% {

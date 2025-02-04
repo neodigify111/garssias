@@ -101,7 +101,7 @@ $(function () {
   //rotate animation
 
   function checkVisibility() {
-    var $element = $('.grass-rotate-anm div');
+    var $element = $('.grass-rotate-anm > div');
     var elementTop = $element.offset().top;
     var elementBottom = elementTop + $element.outerHeight();
     var viewportTop = $(window).scrollTop();
@@ -116,7 +116,7 @@ $(function () {
             }
   }
   function checkVisibility2() {
-    var $element = $('.grass-rotate-anm-2 div');
+    var $element = $('.grass-rotate-anm-2 > div');
     var elementTop = $element.offset().top;
     var elementBottom = elementTop + $element.outerHeight();
     var viewportTop = $(window).scrollTop();
