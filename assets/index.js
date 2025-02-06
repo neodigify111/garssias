@@ -29,6 +29,5 @@ $(function () {
   }
 });
 
-$(document).ready(function () {
-      $("body").css("opacity", "1");
-}
+ $("body").css("opacity", "1");
+
