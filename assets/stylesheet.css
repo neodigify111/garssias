@@ -159,6 +159,8 @@ body {
 /*Presets*/
 *{
     transition: color 0.2s ease;
+    transition: opacity 0.2s ease;
+    transition: transform 0.2s ease;
 }
 /* animation */
 
@@ -254,7 +256,7 @@ body {
     background-size: 1920px;
     background-position: top -150px center;
     background-repeat: repeat-x;
-    background-image: url('grass-field-bg.jpg'); }
+    background-image: url('grass-essentials.jpg'); }
 
 @media (max-width: 1366px) {
     .grass-garden {
@@ -285,7 +287,7 @@ body {
     transition-timing-function: linear !important;    }
 
 
-/* Button hover  */
+/* Button hover + Product card */
 .btn-hv-bg{
     position: relative;
     z-index: 1;
@@ -309,12 +311,40 @@ z-index: -1;
 }
 
 .subscribe-btn.btn-hv-bg::before{
-border-radius: 0; }
+border-radius: 12px; }
 
-.btn-hv-bg:hover::before{
+.hover-card:hover .btn-hv-bg:before, .hover-card.btn-hv-bg:hover::before,  .btn-hv-bg.subscribe-btn:hover::before{
     height: 100%;
 
 }
+/* product card */
+.grass-pro-prod img:first-child{
+    opacity: 1;
+    transform: translateY(0%);
+    }
+.grass-pro-prod img:last-child{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+.grass-pro-prod:hover img:first-child{
+opacity: 0;
+transform: translateY(-100%);
+}
+.grass-pro-prod:hover img:last-child{
+    opacity: 1;
+    transform: translateY(0%);
+}
+.grass-pro-prod:hover img:first-child{
+opacity: 0;
+transform: translateY(-100%);
+}
+.grass-pro-prod:hover img:last-child{
+    opacity: 1;
+    transform: translateY(0%);
+    }
+    
+
 
 @media (max-width: 767px) {
     .grass-need-help br {
@@ -342,8 +372,7 @@ border-radius: 0; }
     transform: scale(1);
 }
 
-.gr-transtion ,
-.grass-hover-animation {
+.gr-transtion {
     transition: 0.2s ease; }
 
 
@@ -415,13 +444,14 @@ border-radius: 0; }
     bottom: -300%; /* Start outside the button */
     transition: transform 0.2s ease-in-out;
     text-align: center;
+    color: #fff;
 }
 
-.btn-hv-bg:hover .btn-text {
+.hover-card:hover .btn-text {
     transform: translateY(-300%);
 }
 
-.btn-hv-bg:hover .btn-text::after {
+.hover-card:hover .btn-text::after {
     transform: translateY(0%);
 }
 
@@ -451,198 +481,45 @@ border-radius: 0; }
     transform: rotate(-180deg);
 }
 
-.grass-product-toggle-button{
+.grass-product-toggle-button, button{
     cursor: pointer;
 }
 
 
 /* Card buzz effect */
 
-.grass-rotate-anm .active:nth-child(odd) {
-    animation-name: animation-buzz-out-odd;
-    animation-delay: 0.5s;
-    animation-duration: .75s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
+.grass-rotate-anm > div:nth-child(odd) {
     transform: translateX(0px) rotate(-5deg);
 
 }
-.grass-rotate-anm .active:nth-child(even) {
-    animation-name: animation-buzz-out-odd;
-    animation-delay: 0.5s;
-    animation-duration: .75s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
+.grass-rotate-anm > div:nth-child(even) {
+ 
     transform: translateX(0px) rotate(5deg);
 }
 
 
-@keyframes animation-buzz-out-odd{
-    10% {
-        transform: translateX(3px) rotate(2deg);
-    }
-    20% {
-        transform: translateX(-3px) rotate(-2deg);
-    }
-    30% {
-        transform: translateX(3px) rotate(2deg);
-    }
-    40% {
-        transform: translateX(-3px) rotate(-2deg);
-    }
-    50% {
-        transform: translateX(2px) rotate(3deg);
-    }
-    60% {
-        transform: translateX(-2px) rotate(-3deg);
-    }
-    70% {
-        transform: translateX(2px) rotate(4deg);
-    }
-    80% {
-        transform: translateX(-2px) rotate(-4deg);
-    }
-    90% {
-        transform: translateX(0px) rotate(5deg);
-    }
-    
-    100% {
-        transform: translateX(0px) rotate(-5deg);
-    }
-    
-    }
-
-    @keyframes animation-buzz-out-even{
-        10% {
-            transform: translateX(3px) rotate(-2deg);
-        }
-        20% {
-            transform: translateX(-3px) rotate(2deg);
-        }
-        30% {
-            transform: translateX(3px) rotate(-2deg);
-        }
-        40% {
-            transform: translateX(-3px) rotate(2deg);
-        }
-        50% {
-            transform: translateX(2px) rotate(-3deg);
-        }
-        60% {
-            transform: translateX(-2px) rotate(3deg);
-        }
-        70% {
-            transform: translateX(2px) rotate(-4deg);
-        }
-        80% {
-            transform: translateX(-2px) rotate(4deg);
-        }
-        90% {
-            transform: translateX(0px) rotate(-5deg);
-        }
-        
-        100% {
-            transform: translateX(0px) rotate(5deg);
-        }
-        
-        }
 
 
-
-        .grass-rotate-anm-2 .active:nth-child(odd) {
-            animation-name: animation-buzz-out-odd;
-            animation-delay: 0.5s;
-            animation-duration: .75s;
-            animation-timing-function: linear;
-            animation-iteration-count: 1;
+        .grass-rotate-anm-2 > div:nth-child(odd) {
             transform: translateX(0px) rotate(-1deg);
         
         }
 
 
-        .grass-rotate-anm-2 .active:nth-child(even) {
-            animation-name: animation-buzz-out-odd;
-            animation-delay: 0.5s;
-            animation-duration: .75s;
-            animation-timing-function: linear;
-            animation-iteration-count: 1;
+        .grass-rotate-anm-2 > div:nth-child(even) {
             transform: translateX(0px) rotate(1deg);
         }
 
         .grass-rotate-anm-2 > div{
             transition: transform 0.2s ease;
         }
-        .grass-rotate-anm-2 .active:hover, .grass-rotate-anm .active:hover{
+        .grass-rotate-anm-2 > div:hover, .grass-rotate-anm> div:hover{
             transform: translateX(0px) rotate(0deg);
             cursor: default;
         }
         
-        @keyframes animation-buzz-out-odd{
-            10% {
-                transform: translateX(3px) rotate(2deg);
-            }
-            20% {
-                transform: translateX(-3px) rotate(-2deg);
-            }
-            30% {
-                transform: translateX(3px) rotate(2deg);
-            }
-            40% {
-                transform: translateX(-3px) rotate(-2deg);
-            }
-            50% {
-                transform: translateX(2px) rotate(3deg);
-            }
-            60% {
-                transform: translateX(-2px) rotate(-3deg);
-            }
-            70% {
-                transform: translateX(2px) rotate(4deg);
-            }
-            80% {
-                transform: translateX(-2px) rotate(-4deg);
-            }
-            90% {
-                transform: translateX(0px) rotate(5deg);
-            }
-            
-            100% {
-                transform: translateX(0px) rotate(-5deg);
-            }
-            
-            }
-        
-            @keyframes animation-buzz-out-even{
-                10% {
-                    transform: translateX(3px) rotate(-2deg);
-                }
-                20% {
-                    transform: translateX(-3px) rotate(2deg);
-                }
-                30% {
-                    transform: translateX(3px) rotate(-2deg);
-                }
-                40% {
-                    transform: translateX(-3px) rotate(2deg);
-                }
-                50% {
-                    transform: translateX(2px) rotate(-3deg);
-                }
-                60% {
-                    transform: translateX(-2px) rotate(3deg);
-                }
-                70% {
-                    transform: translateX(2px) rotate(-4deg);
-                }
-                80% {
-                    transform: translateX(-2px) rotate(4deg);
-                }
-                90% {
-                    transform: translateX(0px) rotate(-5deg);
-                }
-                
-                100% {
-                    transform: translateX(0px) rotate(5deg);
-                }
-                
-                }
+    /* Footer CSS */
+
+    .socials a:hover img{
+        transform: rotate(10deg);
+    }

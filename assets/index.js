@@ -11,4 +11,21 @@ $(function () {
             $(this).addClass(formattedClass); // Add the cleaned-up class
         }
     });
+
+// Force CSS reflow when resizing the window
+  $(window).on('resize', function () {
+    $('body').toggleClass('resized');
+  });
+
+  // Disable cache for CSS updates
+  $('link[rel="stylesheet"]').each(function () {
+    let href = $(this).attr('href');
+    $(this).attr('href', href + '?v=' + new Date().getTime());
+  });
+
+  // Ensure the viewport meta tag exists
+  if ($('meta[name="viewport"]').length === 0) {
+    $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
+  }
 });
+
